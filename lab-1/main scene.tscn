@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfsn6lq72m02f"]
+
+[ext_resource type="Texture2D" uid="uid://wf3jr1p2wsv4" path="res://Assets/cat.png" id="1_s4pbt"]
+[ext_resource type="Texture2D" uid="uid://c1n82ql5sp5ai" path="res://Assets/Heart.png" id="2_g3h20"]
+[ext_resource type="PackedScene" uid="uid://vc4x1wrdvd8i" path="res://tree.tscn" id="3_yrbqf"]
+[ext_resource type="Texture2D" uid="uid://c2hsbc8gxgsl8" path="res://Assets/moon.png" id="4_7ejce"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(180, 490)
+texture = ExtResource("1_s4pbt")
+
+[node name="Heart" type="Sprite2D" parent="Cat"]
+position = Vector2(-9, 59)
+scale = Vector2(0.00569004, 0.00603149)
+texture = ExtResource("2_g3h20")
+
+[node name="Tree" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(-14, 320)
+
+[node name="Tree2" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(88, 321)
+
+[node name="Tree3" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(189, 320)
+
+[node name="Tree4" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(286, 320)
+
+[node name="Tree5" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(374, 319)
+
+[node name="Tree6" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(476, 320)
+
+[node name="Tree7" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(577, 319)
+
+[node name="Tree8" parent="." instance=ExtResource("3_yrbqf")]
+position = Vector2(674, 319)
+
+[node name="Moon" type="Sprite2D" parent="."]
+position = Vector2(969, 187)
+scale = Vector2(0.612308, 0.612308)
+texture = ExtResource("4_7ejce")
