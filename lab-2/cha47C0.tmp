@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs0r2vgu5bxnc"]
+
+[ext_resource type="Texture2D" uid="uid://bkdnnhj8dcg5s" path="res://car.png" id="1_02kwg"]
+[ext_resource type="Script" path="res://movement.gd" id="1_ftyvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e18n3"]
+size = Vector2(263.5, 117)
+
+[node name="main" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(490, 445)
+rotation = 1.5708
+script = ExtResource("1_ftyvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.950806, 0.125031)
+shape = SubResource("RectangleShape2D_e18n3")
+
+[node name="Purepng_com-car-top-viewcarscar-top-view-961524670079Fkdn8" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-3, -0.999969)
+scale = Vector2(0.15853, 0.15853)
+texture = ExtResource("1_02kwg")

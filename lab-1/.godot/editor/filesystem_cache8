@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1728512936
+Lab-1_README.md::TextFile::-1::1727802826::0::1::::<><>::
+main scene.tscn::PackedScene::7548210353323795215::1727802826::0::1::::<><>::uid://wf3jr1p2wsv4::::res://Assets/cat.png<>uid://c1n82ql5sp5ai::::res://Assets/Heart.png<>uid://vc4x1wrdvd8i::::res://tree.tscn<>uid://c2hsbc8gxgsl8::::res://Assets/moon.png
+tree.tscn::PackedScene::1479897738326881774::1727802826::0::1::::<><>::
+::res://Assets/::1728512813
+cat.png::CompressedTexture2D::1556193530529982319::1727802826::1727803012::1::::<><>::
+Heart.png::CompressedTexture2D::6626640948728738584::1727802826::1727803027::1::::<><>::
+icon.svg::CompressedTexture2D::1373314604545798741::1727802826::1727803012::1::::<><>::
+moon.png::CompressedTexture2D::6683485637884047487::1727802826::1727803012::1::::<><>::
