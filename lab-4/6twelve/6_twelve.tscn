@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctydbv5eathte"]
+
+[ext_resource type="PackedScene" uid="uid://damwcbs3wcayl" path="res://6twelve/Models/6twelve.fbx" id="1_ql5ps"]
+
+[node name="6twelve" instance=ExtResource("1_ql5ps")]
+
+[node name="Glasses" parent="." index="5"]
+visible = false
+
+[node name="Door_01" parent="." index="6"]
+visible = false
+
+[node name="Door" parent="." index="129"]
+visible = false

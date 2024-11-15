@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtt8imtrnh6gi"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_lnr20"]
+[ext_resource type="PackedScene" uid="uid://18nyenxll0cc" path="res://arm/psx_first_person_arms.tscn" id="2_cwnew"]
+[ext_resource type="PackedScene" uid="uid://ctydbv5eathte" path="res://6twelve/6_twelve.tscn" id="3_mwb7s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_f6bkd"]
+sky_material = SubResource("ProceduralSkyMaterial_5lq0h")
+
+[sub_resource type="Environment" id="Environment_g2h84"]
+background_mode = 2
+sky = SubResource("Sky_f6bkd")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+volumetric_fog_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 0.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
+
+[node name="World" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map"]
+environment = SubResource("Environment_g2h84")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_lnr20")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(0.993019, 0, 0, 0, 1.05226, 0, 0, 0, 0.993019, 0, 2.12283, 0)
+mesh = SubResource("CapsuleMesh_xc2g5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_wydro")
+
+[node name="Head" type="Node3D" parent="Player"]
+transform = Transform3D(0.993019, 0, 0, 0, 0.755355, 0, 0, 0, 0.993019, 0, 2.76125, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
+
+[node name="PSX_First_Person_Arms" parent="Player/Head" instance=ExtResource("2_cwnew")]
+transform = Transform3D(-1, 0, -8.74229e-08, 0, 1, 0, 8.74229e-08, 0, -1, 0.0609112, -1.83047, 0.0404697)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Player/Head"]
+transform = Transform3D(1.00703, 0, 0, 0, 1.32388, 0, 0, 0, 1.00703, 0, 0, -0.330052)
+light_energy = 5.0
+light_indirect_energy = 2.067
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 10.0
+
+[node name="6twelve" parent="." instance=ExtResource("3_mwb7s")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="6twelve"]
+transform = Transform3D(1.25407, 0, 0, 0, 1.25407, 0, 0, 0, 1.25407, -4.74565, -1.13849, 0.749409)
+use_collision = true
+size = Vector3(133, 0.120667, 127.892)
